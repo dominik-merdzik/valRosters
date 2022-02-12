@@ -18,27 +18,45 @@
                 <button onclick="location.href ='list-players.php'"class="btn1">List Players</button>  
             </div>
             <div>
-                 <?php
+            <form method="POST" action="save-player.php">
+                    <fieldset>
+                        <label for="firstName">First name:*</label>
+                        <input name="firstName" id="firstName" required maxlength="20"/>
+                    </fieldset>
+                    <fieldset>
+                        <label for="lastName">Last name:*</label>
+                        <input name="lastName" id="lastName" required maxlength="20"/>
+                    </fieldset>
+                    <fieldset>
+                        <label for="alias">In-game username:*</label>
+                        <input name="alias" id="alias" required maxlength="20"/>
+                    </fieldset>
+                    <fieldset>
+                        <label for="roleId">Role:*</label>
+                        <select name="roleId" id="roleId">
+                            
+                            <?php
+                            require 'db.php';
+                            $sql = "SELECT * FROM playerRole";
 
-                    $playerName = $_Post['name']; //players first name 
-                    $playerSurName = $_Post['lastName']; // players last name
-                    $inGameName = $_Post['alias']; // players in game name
-                    $inGameRole = $_Post['role']; // players main role in game (Sentinal, initiator, duelist, controller)
-                    $adr = $_Post['adr']; // players ADR "Average damage per round"
+                            $cmd = $db->prepare($sql);
+                            $cmd->execute();
+                            $roles = $cmd->fetchAll();
 
-                    require 'db.php';
+                            foreach($roles as $role){
+                                echo '<option value="'. $role['roleId'].'">' . $role['roles'] . '</option>';
+                            }
+                            $db = null;
+                            ?>
 
-                    $sql = "INSERT INTO players (name, lastName, alias, agentRole, adr) VALUES (:name, :lastName, :alias, :agentRole, :adr)";
-                    
-                    $cmd = $db->prepare($sql);
-                    $cmd->bindParam(':name', $name, PDO::PARAM_STR, 100);
-                    $cmd->bindParam(':lastName', $playerSurName, PDO::PARAM_STR, 100);
-                    $cmd->bindParam(':alias', $inGameName, PDO::PARAM_STR, 50);
-                    $cmd->bindParam(':role', $inGameRole, PDO::PARAM_STR, 20);
-                    $cmd->bindParam(':adr', $adr, PDO::PARAM_INT);
-                    $cmd->execute();
-
-                 ?>
+                        </select>
+                    </fieldset>
+                    <fieldset>
+                        <label for="adr">ADR:*</label>
+                        <input name="adr" id="adr" required maxlength="20"/>
+                    </fieldset>
+                    <button>Save</button>
+                </form>
             </div>
         </main>
     </body>

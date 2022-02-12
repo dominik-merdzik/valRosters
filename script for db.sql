@@ -3,7 +3,7 @@
 	
     CREATE TABLE valRoster(
 	playerId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	name VARCHAR(100) NOT NULL,
+	firstName VARCHAR(100) NOT NULL,
 	lastName VARCHAR(100) NOT NULL,
 	alias VARCHAR(50) NOT NULL,
     roleId INT NOT NULL,
@@ -25,6 +25,11 @@
 		('Controller'),
 		('Initiator'),
 		('Duelist');
+        
+ INSERT INTO valRoster (firstName, lastName, alias, roleId, adr) 
+ VALUES ('Tyson', 'Ngo', 'TenZ', '1', 190);      
+ 
+ SELECT * FROM valRoster;
 
 	
     #DROP TABLE valRoster;
