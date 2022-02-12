@@ -16,7 +16,16 @@
             $adr = $_POST['adr']; // players ADR "Average damage per round"
             $flag = true;
       
+            if (empty($firstName) || empty($lastName) || empty($alias) || empty($roleId) || empty($adr)) {
+                echo "All fields are required <br />";
+                $flag = false;
+            }
+            else if (strlen($firstName) > 25 || strlen($lastName)> 25 ) {
+                    echo "First or Last name cannot exceed 25 characters";
+                    $flag = false;
+            }          
 
+            if ($flag){
             require 'db.php';
 
             $sql = "INSERT INTO valRoster (firstName, lastName, alias, roleId, adr) VALUES (:firstName, :lastName, :alias, :roleId, :adr)";
@@ -32,7 +41,7 @@
             $db = null;
             echo " Player Is Saved <br />";
             echo '<a href="list-players.php">Click here to view the list of players</a>';
-
+            }
             
         ?>
            
