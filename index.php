@@ -9,13 +9,14 @@
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"></link>   
     </head>
     <body>
-        header with title and sub-title 
+        <!-- header with title and sub-title  -->
         <header class="header">
             <h1>VAL-ROSTER</h1>
             <h3>2022 VALORANT Player Roaster</h3>
         </header>
         <main class="mainIndex">   
             <div class="d-flex justify-content-center"> 
+                <!-- buttons to take us to the different pages -->
                 <button onclick="location.href ='add-player.php'"class="btn btn-secondary btn-sm">Add New Player</button> 
                 <button onclick="location.href ='list-players.php'" class="btn btn-secondary btn-sm">Show Current Players</button> 
             </div>

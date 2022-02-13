@@ -22,6 +22,7 @@
             </div>
 
         <div>
+        <!-- creating table with heading for each row-->
         <table class="table">
             <thread class="thead-dark">
                 <tr>
@@ -34,7 +35,7 @@
             </thread>
         <tbody>
 
-        
+        <!-- these buttons will be used to sort our data depending on what button is pressed by user-->
         <form name="Table Properties" method="post">
         Sort by:
         <button type="submit" name="Ascending" id="btn1"class="btn btn-info btn-sm">Ascending </button>
@@ -45,9 +46,11 @@
             
             <?php
 
+                // connecting to data base
                 require 'db.php';
 
                 // Reference for sorting buttons https://stackoverflow.com/questions/28475453/php-sort-table-when-submit-button-is-clicked
+                // if the x button above is pressed we'll run through these if statments and set variable $sql to a specific script  
                 if(isset($_POST['Ascending'])){
                     $sql="SELECT valRoster.*,playerRole.roles AS 'playerRole' 
                     FROM valRoster 
@@ -63,18 +66,20 @@
                 else if (isset($_POST['Default'])){
                     $sql = "SELECT valRoster.*,playerRole.roles AS 'playerRole' FROM valRoster INNER JOIN playerRole ON valRoster.roleId=playerRole.roleId";
                 }
+                // the else will be our default for when the user first loads into the page
                 else{
                     $sql = "SELECT valRoster.*,playerRole.roles AS 'playerRole' FROM valRoster INNER JOIN playerRole ON valRoster.roleId=playerRole.roleId";
                 }
 
-              
+                // getting our script ($sql) from our if statments and sending them through to the data base to generate our table dataset
                 $cmd = $db->prepare($sql);
                 $cmd->execute();
                 $valRoster = $cmd->fetchAll();
 
-                // loop through resualts and display inside table cells
+                // loops through resaults and displays the data from the database inside table cells
                 foreach($valRoster as $valRoster){
-                    echo '  <tr>
+                    //echoing our html table data
+                    echo '  <tr> 
                                 <td>' . $valRoster['firstName'] . '</td>
                                 <td>'.$valRoster['lastName'] . '</td>
                                 <td>' . $valRoster['alias'] . '</td>
@@ -85,7 +90,7 @@
 
                 
                 
-            // disconnects from db
+            // disconnecting from database to reduce traffic 
             $db = null;
             ?>
         </tbody>
@@ -93,4 +98,4 @@
         </div>
         </main>
     </body>
-</html>
+</html> 

@@ -1,6 +1,11 @@
 
 	USE Dominik1169488;
 	
+    # Creating our table
+    -- adding primary key for tracking players
+    -- making columns for our data input in php
+    -- FOREIGN KEY (roleId) REFERENCES another table (playerRole) in our database 
+    -- all inputs are not null (required)
     CREATE TABLE valRoster(
 	playerId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	firstName VARCHAR(100) NOT NULL,
@@ -11,13 +16,16 @@
 	adr INT NOT NULL
 	);
     
+    -- altering table to increment starting from 25565 for security and privacy reasons
 	ALTER TABLE valRoster AUTO_INCREMENT = 25565;
     
+    -- creating another table that will be used for our dropdown menu 
     CREATE TABLE playerRole (
 		roleId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 		roles VARCHAR(100) NOT NULL
 	);
     
+    -- inserting data for our dropdown menu since these options are static and more cant be added
     INSERT INTO playerRole (
 		roles
 	)
@@ -25,18 +33,20 @@
 		('Controller'),
 		('Initiator'),
 		('Duelist');
-        
- INSERT INTO valRoster (firstName, lastName, alias, roleId, adr) 
- VALUES ('Tyson', 'Ngo', 'TenZ', '1', 190);      
- 
- SELECT * FROM valRoster;
- 
- SELECT valRoster.*,playerRole.roles AS 'playerRole' 
- FROM valRoster 
- INNER JOIN playerRole ON valRoster.roleId=playerRole.roleId
 
+	 -- pre-adding data to be displayed (trial input) 
+	 INSERT INTO valRoster (firstName, lastName, alias, roleId, adr) 
+	 VALUES ('Tyson', 'Ngo', 'TenZ', '1', 190);      
 	
-    #DROP TABLE valRoster;
+    
+	SELECT * FROM valRoster;
+ 
+ -- SELECT valRoster.*,playerRole.roles AS 'playerRole' 
+--  FROM valRoster 
+--  INNER JOIN playerRole ON valRoster.roleId=playerRole.roleId 
+--  ORDER BY valRoster.adr ASC;
+
+#DROP TABLE valRoster;
 	
 
     
