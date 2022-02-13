@@ -36,11 +36,14 @@
 
 	 -- pre-adding data to be displayed (trial input) 
 	 INSERT INTO valRoster (firstName, lastName, alias, roleId, adr) 
-	 VALUES ('Tyson', 'Ngo', 'TenZ', '1', 190);      
+	 VALUES ('Tyson', 'Ngo', 'TenZ', '4', 163);      
 	
     
 	SELECT * FROM valRoster;
- 
+    
+    SET SQL_SAFE_UPDATES=0;
+    DELETE FROM valRoster;
+	SET SQL_SAFE_UPDATES=1;
  -- SELECT valRoster.*,playerRole.roles AS 'playerRole' 
 --  FROM valRoster 
 --  INNER JOIN playerRole ON valRoster.roleId=playerRole.roleId 
