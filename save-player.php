@@ -8,7 +8,7 @@
     <body>
         
         <?php
-
+        
             $firstName = trim($_POST['firstName']); //players first name 
             $lastName = trim($_POST['lastName']); // players last name
             $alias = trim($_POST['alias']); // players in game name

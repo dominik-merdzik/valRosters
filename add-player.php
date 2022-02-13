@@ -34,7 +34,7 @@
                     <fieldset>
                         <label for="roleId">Role:*</label>
                         <select name="roleId" id="roleId">
-                            
+
                             <?php
                             require 'db.php';
                             $sql = "SELECT * FROM playerRole";
@@ -55,7 +55,7 @@
                         <label for="adr">ADR:*</label>
                         <input name="adr" id="adr" required maxlength="20"/>
                     </fieldset>
-                    <button>Save</button>
+                    <button>Add player</button>
                 </form>
             </div>
         </main>

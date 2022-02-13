@@ -30,6 +30,10 @@
  VALUES ('Tyson', 'Ngo', 'TenZ', '1', 190);      
  
  SELECT * FROM valRoster;
+ 
+ SELECT valRoster.*,playerRole.roles AS 'playerRole' 
+ FROM valRoster 
+ INNER JOIN playerRole ON valRoster.roleId=playerRole.roleId
 
 	
     #DROP TABLE valRoster;
