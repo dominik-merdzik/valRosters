@@ -6,6 +6,6 @@
 
 <p> The link to the AWS: </p>
 <link>http://15.222.122.223/~Dominik1169488/1006-php/assignment-01/valRosters/</link>
-
+<div></div>
 <p> My idea for this website came from this website: </p> <link>https://www.vlr.gg/stats/?event_group_id=all&event_id=all&region=na&country=all&min_rounds=200&min_rating=1550&agent=all&map_id=all&timespan=60d</link>
 
