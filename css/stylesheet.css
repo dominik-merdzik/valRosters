@@ -1,0 +1,38 @@
+
+/* importing font from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Mukta:wght@200;300;400;600;700;800&display=swap');
+
+/* adding basic styling to make pages look more appearing */
+
+h1 {
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #fff;
+    font-weight: bold;
+}
+
+body{
+    font-family: 'Mukta', sans-serif;
+}
+
+.header{
+    padding:10px;
+    background-color:#FF685C;
+} 
+.main{
+    padding:10px;
+}
+.mainIndex div{
+    padding:5px;
+}
+
+.btn-primary:active:focus{
+    background-color:grey;
+}
+
+.form1{
+    padding:10px;
+}
+.form1 fieldset{
+    padding:15px;
+}
+

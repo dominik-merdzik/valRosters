@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <title>Player List</title>
         <link type="text/css" rel="stylesheet" href="css/stylesheet.css"></link>
+        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"></link>
+        
     </head>
     <body>
 
@@ -12,16 +14,16 @@
             <h1>VAL-ROSTER</h1>
             <h3>2022 VALORANT Player Roaster</h3>
         </header>
-        <main> 
+        <main class="main"> 
 
             <div> 
-                <button onclick="location.href ='index.php'"class="btn1">Home</button> 
-                <button onclick="location.href ='add-player.php'"class="btn1">Add New Player</button>  
+                <button onclick="location.href ='index.php'"class="btn btn-secondary btn-sm">Home</button> 
+                <button onclick="location.href ='add-player.php'"class="btn btn-secondary btn-sm">Add New Player</button>  
             </div>
 
         <div>
-        <table class="table table-striped">
-            <thread>
+        <table class="table">
+            <thread class="thead-dark">
                 <tr>
                     <th>First Name</th>
                     <th>Last Name</th>
@@ -35,9 +37,9 @@
         
         <form name="Table Properties" method="post">
         Sort by:
-        <button type="submit" name="Ascending" class="button">Ascending </button>
-        <button type="submit" name="Descending" class="button">Descending </button>
-        <button type="submit" name="Default" class="button">Default </button>
+        <button type="submit" name="Ascending" id="btn1"class="btn btn-info btn-sm">Ascending </button>
+        <button type="submit" name="Descending" class="btn btn-info btn-sm">Descending </button>
+        <button type="submit" name="Default" class="btn btn-info btn-sm">Default </button>
         </form>
 
             
@@ -45,6 +47,7 @@
 
                 require 'db.php';
 
+                // Reference for sorting buttons https://stackoverflow.com/questions/28475453/php-sort-table-when-submit-button-is-clicked
                 if(isset($_POST['Ascending'])){
                     $sql="SELECT valRoster.*,playerRole.roles AS 'playerRole' 
                     FROM valRoster 
@@ -82,8 +85,8 @@
 
                 
                 
-            // disconnect
-            
+            // disconnects from db
+            $db = null;
             ?>
         </tbody>
         </table>

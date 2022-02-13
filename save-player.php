@@ -4,11 +4,12 @@
         <meta charset="UTF-8">
         <title>Add new Players</title>
         <link type="text/css" rel="stylesheet" href="css/stylesheet.css"></link>
+        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"></link>
     </head>
     <body>
         
         <?php
-        
+
             $firstName = trim($_POST['firstName']); //players first name 
             $lastName = trim($_POST['lastName']); // players last name
             $alias = trim($_POST['alias']); // players in game name
@@ -31,15 +32,16 @@
             $sql = "INSERT INTO valRoster (firstName, lastName, alias, roleId, adr) VALUES (:firstName, :lastName, :alias, :roleId, :adr)";
             
             $cmd = $db->prepare($sql);
-            $cmd->bindParam(':firstName', $firstName, PDO::PARAM_STR);
-            $cmd->bindParam(':lastName', $lastName, PDO::PARAM_STR);
-            $cmd->bindParam(':alias', $alias, PDO::PARAM_STR);
+            $cmd->bindParam(':firstName', $firstName, PDO::PARAM_STR, 35);
+            $cmd->bindParam(':lastName', $lastName, PDO::PARAM_STR, 35);
+            $cmd->bindParam(':alias', $alias, PDO::PARAM_STR, 35);
             $cmd->bindParam(':roleId', $roleId, PDO::PARAM_STR);
             $cmd->bindParam(':adr', $adr, PDO::PARAM_INT);
             $cmd->execute();
 
             $db = null;
-            echo " Player Is Saved <br />";
+            echo 
+                '<h1>Player Is Saved <h1/>';
             echo '<a href="list-players.php">Click here to view the list of players</a>';
             }
             

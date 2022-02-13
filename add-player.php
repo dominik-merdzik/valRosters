@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Add new Players</title>
         <link type="text/css" rel="stylesheet" href="css/stylesheet.css"></link>
+        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"></link>
     </head>
     <body>
 
@@ -12,13 +13,13 @@
             <h1>VAL-ROSTER</h1>
             <h3>2022 VALORANT Player Roaster</h3>
         </header>
-        <main>   
+        <main class="main">   
             <div> 
-                <button onclick="location.href ='index.php'"class="btn1">Home</button> 
-                <button onclick="location.href ='list-players.php'"class="btn1">List Players</button>  
+                <button onclick="location.href ='index.php'" class="btn btn-secondary btn-sm">Home</button> 
+                <button onclick="location.href ='list-players.php'"class="btn btn-secondary btn-sm">List Players</button>  
             </div>
             <div>
-            <form method="POST" action="save-player.php">
+            <form class="form1" method="POST" action="save-player.php">
                     <fieldset>
                         <label for="firstName">First name:*</label>
                         <input name="firstName" id="firstName" required maxlength="20"/>
@@ -55,7 +56,7 @@
                         <label for="adr">ADR:*</label>
                         <input name="adr" id="adr" required maxlength="20"/>
                     </fieldset>
-                    <button>Add player</button>
+                    <button class="btn btn-primary btn-sm">Add player</button>
                 </form>
             </div>
         </main>
