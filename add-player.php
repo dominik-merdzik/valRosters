@@ -29,7 +29,7 @@
 
                         <!-- using php to make a dropdown menu which will show them a list of available roles -->
                             <?php
-                            require 'db.php'; // connecting to database
+                            require 'includes/db.php'; // connecting to database
                             // selecting "all" from playerRole table in our data base
                             $sql = "SELECT * FROM playerRole";
 

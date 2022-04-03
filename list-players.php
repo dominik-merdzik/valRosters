@@ -35,7 +35,7 @@
                 <?php
 
                 // connecting to data base
-                require 'db.php';
+                require 'includes/db.php';
 
                 // Reference for sorting buttons https://stackoverflow.com/questions/28475453/php-sort-table-when-submit-button-is-clicked
                 // if the x button above is pressed we'll run through these if statments and set variable $sql to a specific script  

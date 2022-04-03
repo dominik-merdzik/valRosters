@@ -34,7 +34,7 @@
             if ($flag){
                 
             //connecting to database    
-            require 'db.php';
+            require 'includes/db.php';
             
             // variable "$sql" gets our sql script through to our database where we input our values
             $sql = "INSERT INTO valRoster (firstName, lastName, alias, roleId, adr) VALUES (:firstName, :lastName, :alias, :roleId, :adr)";

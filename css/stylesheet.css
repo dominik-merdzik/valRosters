@@ -10,6 +10,24 @@ h1 {
     font-weight: bold;
 }
 
+.navbar-brand {
+    font-size: 2.25rem!important;
+}
+
+.container-fluid{
+    height:90px;
+}
+.container-fluid img{
+    height:65px;
+}
+
+.nav-link{
+    height:24px;
+}
+.m-1 img{
+    height:15px;
+}
+
 body{
     font-family: 'Mukta', sans-serif;
 }
