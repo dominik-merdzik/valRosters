@@ -1,11 +1,7 @@
-<?php 
-    require 'includes/metadata.php';
-?>
-<body>
 <?php
     $title = 'Register';
     require 'includes/header.php';
-?>
+    ?>
 
 <main class="container">
     <h1>User Registration</h1>

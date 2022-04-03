@@ -1,11 +1,7 @@
-<?php 
-    require 'includes/metadata.php';
-?>
-<body>
 <?php
+    $title = 'Deleting player';
     require 'includes/header.php';
-    ?>
-<?php
+    
 $title = 'Delete player';
 
     try {

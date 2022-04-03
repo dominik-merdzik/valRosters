@@ -1,9 +1,5 @@
 <?php
-require 'includes/metadata.php';
-?>
-
-<body>
-    <?php
+    $title = 'My team';
     require 'includes/header.php';
     ?>
     <h1 class="heading-title">My Team</h1>
@@ -17,8 +13,8 @@ require 'includes/metadata.php';
         </form>
         <div class="team-buttons-player-add"><button onclick="location.href ='add-player.php'" class="btn btn-secondary btn-sm">Add New Player</button></div>       
     </div>
-    <table class="table table-striped">
-        <thead>
+    <table class="table">
+            <thread class="thead-dark">
             <tr>
                 <th>First Name</th>
                 <th>Last Name</th>

@@ -1,10 +1,8 @@
-<?php 
-    require 'includes/metadata.php';
-?>
-<body class="index-body">
 <?php
+    $title = 'Welcome';
     require 'includes/header.php';
     ?>
+    <body class="index-body">
         <main class="mainIndex">   
             <div class="index-buttons-div"> 
                 <!-- buttons to take us to the different pages -->

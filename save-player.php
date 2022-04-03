@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Add new Players</title>
-        <link type="text/css" rel="stylesheet" href="css/stylesheet.css"></link>
-        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"></link>
-    </head>
-    <body>
+<?php
+    $title = 'Saving player...';
+    require 'includes/header.php';
+    ?>
         
         <?php
-
+    try{
             // setting up super gobal variables to later input dataset to database
             // using trim function to trim the user inputs  
             $firstName = trim($_POST['firstName']); //players first name 
@@ -76,7 +71,9 @@
                 '<h1>Player Is Saved <h1/>';
             echo '<a href="list-players.php">Click here to view the list of players</a>';
             }
-            
+        } catch (Exception $error) {
+            header('location:error.php');
+        }
         ?>
            
     </body>

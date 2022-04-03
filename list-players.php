@@ -1,11 +1,7 @@
-<?php 
-    require 'includes/metadata.php';
-?>
-<body>
 <?php
+    $title = 'Players List';
     require 'includes/header.php';
     ?>
-
 <main class="main">
     <h1 class="heading-title">Current players </h1>
     <div>

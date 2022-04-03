@@ -1,8 +1,5 @@
-<?php 
-    require 'includes/metadata.php';
-?>
-<body>
 <?php
+    $title = 'Add Player';
     require 'includes/header.php';
     ?>
 

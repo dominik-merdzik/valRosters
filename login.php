@@ -1,6 +1,7 @@
-<?php 
-    require 'includes/metadata.php';
-?>
+<?php
+    $title = 'Login';
+    require 'includes/header.php';
+    ?>
 <body>
 <?php
     $title = 'Login';

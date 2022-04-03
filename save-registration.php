@@ -1,11 +1,7 @@
-<?php 
-    require 'includes/metadata.php';
-?>
-<body>
 <?php
-    
-$title = 'Registrating...';
-require 'includes/header.php';
+    $title = 'Welcome';
+    require 'includes/header.php';
+  
 
 // capture form inputs and
 

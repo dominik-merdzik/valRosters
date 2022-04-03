@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Mukta:wght@200;300;400;600;700;800&display=swap');
 
 /* adding basic styling to make pages look more appearing */
-
+@media (prefers-color-scheme: dark) {}
 h1 {
     -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: #fff;
@@ -28,16 +28,13 @@ h1 {
     height:15px;
 }
 
-body{
-    font-family: 'Mukta', sans-serif;
-}
-
 .header{
     padding:10px;
     background-color:#FF685C;
 } 
 .main{
     padding:10px;
+    
 }
 .mainIndex div{
     padding:10px;
@@ -100,4 +97,125 @@ body{
     padding-left:10px;
     display:flex;
     justify-content:flex-end;
+}
+
+
+/*Refernce for logo hover affect: https://www.joomla-monster.com/blog/web-development/css3-powered-hover-effects-for-your-logo*/
+.jm-logo {
+	padding: 18px;
+}
+.jm-logo a {
+	background: rgba(255,255,255,0.1);
+	-o-transition: -o-transform ease-out 0.1s, background 0.2s;
+	-ms-transition: -ms-transform ease-out 0.1s, background 0.2s;
+	-webkit-transition: -webkit-transform ease-out 0.1s, background 0.2s;
+	transition: transform ease-out 0.1s, background 0.2s;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	padding: 30px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+}
+.jm-logo a:hover {
+	background: rgba(255,255,255,0.05);
+	-o-transform: scale(0.93);
+	-webkit-transform: scale(0.93);
+	-ms-transform: scale(0.93);
+	transform: scale(0.93);
+}
+.jm-logo a:after {
+	pointer-events: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: '';
+	-webkit-box-sizing: content-box; 
+	-moz-box-sizing: content-box; 
+	box-sizing: content-box;
+	top: 0;
+	left: 0;
+	padding: 0;
+	z-index: -1;
+	box-shadow: 0 0 0 2px rgba(255,255,255,0.1);
+	-webkit-box-shadow: 0 0 0 2px rgba(255,255,255,0.1);
+	filter: alpha(opacity=0);
+	opacity: 0;
+	-o-transform: scale(0.9);
+	-webkit-transform: scale(0.9);
+	-ms-transform: scale(0.9);
+	transform: scale(0.9);
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+}
+.jm-logo a:hover:after {
+	-o-animation: sonarEffect 1.3s ease-out 75ms;
+	-webkit-animation: sonarEffect 1.3s ease-out 75ms;
+	animation: sonarEffect 1.3s ease-out 75ms;
+}
+@-o-keyframes sonarEffect {
+	0% {
+		filter: alpha(opacity=30);
+		opacity: 0.3;
+	}
+	40% {
+		filter: alpha(opacity=50);
+		opacity: 0.5;
+		box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 0 10px rgba(255,255,255,0.3);
+		-webkit-box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 0 10px rgba(255,255,255,0.3);
+	}
+	100% {
+		box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 0 10px rgba(255,255,255,0.3);
+		-webkit-box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 0 10px rgba(255,255,255,0.3);
+		-o-transform: scale(1.2);
+		-webkit-transform: scale(1.2);
+		-ms-transform: scale(1.2);
+		transform: scale(1.2);
+		filter: alpha(opacity=0);
+		opacity: 0;
+	}
+}
+@-webkit-keyframes sonarEffect {
+	0% {
+		filter: alpha(opacity=30);
+		opacity: 0.3;
+	}
+	40% {
+		filter: alpha(opacity=50);
+		opacity: 0.5;
+		box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 0 10px rgba(255,255,255,0.3);
+		-webkit-box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 0 10px rgba(255,255,255,0.3);
+	}
+	100% {
+		box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 0 10px rgba(255,255,255,0.3);
+		-webkit-box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 0 10px rgba(255,255,255,0.3);
+		-o-transform: scale(1.2);
+		-webkit-transform: scale(1.2);
+		-ms-transform: scale(1.2);
+		transform: scale(1.2);
+		filter: alpha(opacity=0);
+		opacity: 0;
+	}
+}
+@keyframes sonarEffect {
+	0% {
+		filter: alpha(opacity=30);
+		opacity: 0.3;
+	}
+	40% {
+		filter: alpha(opacity=50);
+		opacity: 0.5;
+		box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 0 10px rgba(255,255,255,0.3);
+		-webkit-box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 0 10px rgba(255,255,255,0.3);
+	}
+	100% {
+		box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 0 10px rgba(255,255,255,0.3);
+		-webkit-box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 0 0 10px rgba(255,255,255,0.3);
+		-o-transform: scale(1.2);
+		-webkit-transform: scale(1.2);
+		-ms-transform: scale(1.2);
+		transform: scale(1.2);
+		filter: alpha(opacity=0);
+		opacity: 0;
+	}
 }
