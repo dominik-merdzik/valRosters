@@ -24,7 +24,7 @@
                 <!-- these buttons will be used to sort our data depending on what button is pressed by user-->
                 <div>
                     <form class="sortingForm" name="Table Properties" method="post">
-                        Sort by:
+                        Sort ADR by:
                         <button type="submit" name="Ascending" id="btn1" class="btn btn-info btn-sm">Ascending </button>
                         <button type="submit" name="Descending" class="btn btn-info btn-sm">Descending </button>
                         <button type="submit" name="Default" class="btn btn-info btn-sm">Default </button>
