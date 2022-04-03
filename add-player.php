@@ -1,24 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Add new Players</title>
-        <link type="text/css" rel="stylesheet" href="css/stylesheet.css"></link>
-        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"></link>
-    </head>
-    <body>
-
-        
-        <header class="header">
-            <h1>VAL-ROSTER</h1>
-            <h3>2022 VALORANT Player Roaster</h3>
-        </header>
+<?php 
+    require 'includes/metadata.php';
+?>
+<body>
+<?php
+    require 'includes/header.php';
+    ?>
 
         <main class="main">   
-            <div> 
-                <button onclick="location.href ='index.php'" class="btn btn-secondary btn-sm">Home</button> 
-                <button onclick="location.href ='list-players.php'"class="btn btn-secondary btn-sm">List Players</button>  
-            </div>
+            
             <div>
             <!-- form will take users input (also doing client side validation) and send it to our save page where we can input it into our database -->
             <form class="form1" method="POST" action="save-player.php">

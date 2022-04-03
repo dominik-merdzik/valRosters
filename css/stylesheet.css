@@ -22,7 +22,22 @@ body{
     padding:10px;
 }
 .mainIndex div{
-    padding:5px;
+    padding:10px;
+}
+
+.index-body{
+    
+    background-image:url(../images/index-background-3.png);
+}
+.index-buttons-div{
+    display:flex;
+    justify-content:center;
+    padding:10px;
+    flex-direction: column;
+    align-content: space-around;
+    align-items: center;
+    margin: 316px 300px;
+    box-shadow: -1px 2px 16px 8px #000000;
 }
 
 .btn-primary:active:focus{
@@ -37,4 +52,10 @@ body{
 }
 .btn{
     padding:100px;
+}
+.add-player-btn{
+    display:flex;
+    padding:20px;
+    justify-content:flex-end;
+    
 }

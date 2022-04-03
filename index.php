@@ -1,24 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>VALORANT Player Rosters</title>
-        <!-- adding my own stylesheet -->
-        <link type="text/css" rel="stylesheet" href="css/stylesheet.css"></link>
-        <!-- adding bootstrap styles -->
-        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"></link>   
-    </head>
-    <body>
-        <!-- header with title and sub-title  -->
-        <header class="header">
-            <h1>VAL-ROSTER</h1>
-            <h3>2022 VALORANT Player Roaster</h3>
-        </header>
+<?php 
+    require 'includes/metadata.php';
+?>
+<body class="index-body">
+<?php
+    require 'includes/header.php';
+    ?>
         <main class="mainIndex">   
-            <div class="d-flex justify-content-center"> 
+            <div class="index-buttons-div"> 
                 <!-- buttons to take us to the different pages -->
-                <button onclick="location.href ='add-player.php'"class="btn btn-secondary btn-sm">Add New Player</button> 
-                <button onclick="location.href ='list-players.php'" class="btn btn-secondary btn-sm">Show Current Players</button> 
+                <div>
+                <button onclick="location.href ='add-player.php'"class="btn btn-secondary ">Add New Player</button> 
+                </div>
+                <div> 
+                <button onclick="location.href ='list-players.php'" class="btn btn-secondary ">Show Current Players</button> 
+                </div>
             </div>
         </main>
     </body>

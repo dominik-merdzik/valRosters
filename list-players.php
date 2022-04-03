@@ -1,27 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Player List</title>
-        <link type="text/css" rel="stylesheet" href="css/stylesheet.css"></link>
-        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"></link>
-        
-    </head>
-    <body>
+<?php 
+    require 'includes/metadata.php';
+?>
+<body>
+<?php
+    require 'includes/header.php';
+    ?>
 
-        
-        <header class="header">
-            <h1>VAL-ROSTER</h1>
-            <h3>2022 VALORANT Player Roaster</h3>
-        </header>
-        <main class="main"> 
-
-            <div> 
-                <button onclick="location.href ='index.php'"class="btn btn-secondary btn-sm">Home</button> 
-                <button onclick="location.href ='add-player.php'"class="btn btn-secondary btn-sm">Add New Player</button>  
-            </div>
-
-        <div>
+<main class="main">
+    <div>
         <!-- creating table with heading for each row-->
         <table class="table">
             <thread class="thead-dark">
@@ -33,43 +19,41 @@
                     <th>ADR</th>
                 </tr>
             </thread>
-        <tbody>
+            <tbody>
 
-        <!-- these buttons will be used to sort our data depending on what button is pressed by user-->
-        <div>
-        <form class="sortingForm" name="Table Properties" method="post">
-        Sort by:
-        <button type="submit" name="Ascending" id="btn1"class="btn btn-info btn-sm">Ascending </button>
-        <button type="submit" name="Descending" class="btn btn-info btn-sm">Descending </button>
-        <button type="submit" name="Default" class="btn btn-info btn-sm">Default </button>
-        </form>
-        </div>
+                <!-- these buttons will be used to sort our data depending on what button is pressed by user-->
+                <div>
+                    <form class="sortingForm" name="Table Properties" method="post">
+                        Sort by:
+                        <button type="submit" name="Ascending" id="btn1" class="btn btn-info btn-sm">Ascending </button>
+                        <button type="submit" name="Descending" class="btn btn-info btn-sm">Descending </button>
+                        <button type="submit" name="Default" class="btn btn-info btn-sm">Default </button>
+                    </form>
+                </div>
 
-            
-            <?php
+
+                <?php
 
                 // connecting to data base
                 require 'db.php';
 
                 // Reference for sorting buttons https://stackoverflow.com/questions/28475453/php-sort-table-when-submit-button-is-clicked
                 // if the x button above is pressed we'll run through these if statments and set variable $sql to a specific script  
-                if(isset($_POST['Ascending'])){
-                    $sql="SELECT valRoster.*,playerRole.roles AS 'playerRole' 
+                if (isset($_POST['Ascending'])) {
+                    $sql = "SELECT valRoster.*,playerRole.roles AS 'playerRole' 
                     FROM valRoster 
                     INNER JOIN playerRole ON valRoster.roleId=playerRole.roleId 
                     ORDER BY valRoster.adr ASC";
-                }
-                else if(isset($_POST['Descending'])){
-                    $sql="SELECT valRoster.*,playerRole.roles AS 'playerRole' 
+                } else if (isset($_POST['Descending'])) {
+                    $sql = "SELECT valRoster.*,playerRole.roles AS 'playerRole' 
                     FROM valRoster 
                     INNER JOIN playerRole ON valRoster.roleId=playerRole.roleId 
                     ORDER BY valRoster.adr DESC";
-                }
-                else if (isset($_POST['Default'])){
+                } else if (isset($_POST['Default'])) {
                     $sql = "SELECT valRoster.*,playerRole.roles AS 'playerRole' FROM valRoster INNER JOIN playerRole ON valRoster.roleId=playerRole.roleId";
                 }
                 // the else will be our default for when the user first loads into the page
-                else{
+                else {
                     $sql = "SELECT valRoster.*,playerRole.roles AS 'playerRole' FROM valRoster INNER JOIN playerRole ON valRoster.roleId=playerRole.roleId";
                 }
 
@@ -79,25 +63,28 @@
                 $valRoster = $cmd->fetchAll();
 
                 // loops through resaults and displays the data from the database inside table cells
-                foreach($valRoster as $valRoster){
+                foreach ($valRoster as $valRoster) {
                     //echoing our html table data
                     echo '  <tr> 
                                 <td>' . $valRoster['firstName'] . '</td>
-                                <td>'.$valRoster['lastName'] . '</td>
+                                <td>' . $valRoster['lastName'] . '</td>
                                 <td>' . $valRoster['alias'] . '</td>
-                                <td>'.$valRoster['playerRole'] . '</td>
-                                <td>'.$valRoster['adr'] . '</td>
-                            <tr>';    
-                }
-
+                                <td>' . $valRoster['playerRole'] . '</td>
+                                <td>' . $valRoster['adr'] . '</td>
+                                <tr>
+                                ';                          
+                  }
+                // disconnecting from database to reduce traffic 
+                $db = null;
+                ?>
                 
-                
-            // disconnecting from database to reduce traffic 
-            $db = null;
-            ?>
-        </tbody>
+            </tbody>
         </table>
-        </div>
-        </main>
-    </body>
-</html> 
+    </div>
+    <div class="add-player-btn"> 
+        <button onclick="location.href ='add-player.php'" class="btn btn-info">Add New Player</button> 
+    </div>
+</main>
+</body>
+
+</html>
