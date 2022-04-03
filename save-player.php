@@ -17,6 +17,7 @@
             $alias = trim($_POST['alias']); // players in game name
             $roleId = $_POST['roleId']; // players main role in game (Sentinal, initiator, duelist, controller)
             $adr = $_POST['adr']; // players ADR "Average damage per round"
+            $playerId = $_POST['playerId'];
             $flag = true;
 
             // light server side validation to check if the user has inputed all of the needed information and 
@@ -36,8 +37,21 @@
             //connecting to database    
            require 'includes/db.php';
             
+            session_start();
+            $userId = $_SESSION['userId'];
+            
+            if (empty($playerId)) {
+                // set the SQL INSERT command to add a new record to our artists table & set up a parameter for the name
+                $sql = "INSERT INTO valRoster (firstName, lastName, alias, roleId, adr, userId) VALUES (:firstName, :lastName, :alias, :roleId, :adr, :userId)";
+            } 
+            else {
+                $sql = "UPDATE valRoster 
+                SET firstName = :firstName, lastName = :lastName, alias = :alias, roleId = :roleId, adr = :adr, userId = :userId 
+                WHERE playerId = :playerId";
+            }
+
             // variable "$sql" gets our sql script through to our database where we input our values
-            $sql = "INSERT INTO valRoster (firstName, lastName, alias, roleId, adr) VALUES (:firstName, :lastName, :alias, :roleId, :adr)";
+            //$sql = "INSERT INTO valRoster (firstName, lastName, alias, roleId, adr) VALUES (:firstName, :lastName, :alias, :roleId, :adr)";
             
             //preparing to send our scrip to the database but first we need to use bindParam to bind our inputs to the matching values in sql
             $cmd = $db->prepare($sql);
@@ -46,6 +60,12 @@
             $cmd->bindParam(':alias', $alias, PDO::PARAM_STR, 25);
             $cmd->bindParam(':roleId', $roleId, PDO::PARAM_STR);
             $cmd->bindParam(':adr', $adr, PDO::PARAM_INT);
+            $cmd->bindParam(':userId', $userId, PDO::PARAM_INT);
+
+            if(!empty($playerId)){
+                $cmd->bindParam(':playerId', $playerId, PDO::PARAM_INT);
+            }
+
             $cmd->execute();
             // once all of our params are binded we can execute the script and bind our user inputs and send them to thier proper column
             

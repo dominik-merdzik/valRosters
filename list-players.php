@@ -7,6 +7,7 @@
     ?>
 
 <main class="main">
+    <h1 class="heading-title">Current players</h1>
     <div>
         <!-- creating table with heading for each row-->
         <table class="table">
@@ -80,9 +81,6 @@
                 
             </tbody>
         </table>
-    </div>
-    <div class="add-player-btn"> 
-        <button onclick="location.href ='add-player.php'" class="btn btn-info">Add New Player</button> 
     </div>
 </main>
 </body>

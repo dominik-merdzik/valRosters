@@ -6,15 +6,13 @@
     $title = 'Login';
     require 'includes/header.php';
     ?>
-
-
 <main class="container">
     <h1>Login</h1>
-    <?php 
-    if (empty($_GET['invalid'])){
+    <?php
+    if (empty($_GET['invalid'])) {
         echo '<h6 class="alert alert-secondary">Please enter your credentials</h6>';
     }
-    else{
+    else {
         echo '<h6 class="alert alert-info">Invalid Login</h6>';
     }
     ?>

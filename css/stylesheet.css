@@ -74,6 +74,11 @@ body{
 .add-player-btn{
     display:flex;
     padding:20px;
-    justify-content:flex-end;
-    
+    justify-content:flex-start;
+}
+.heading-title{
+    display:flex;
+    justify-content:center;
+    font-weight:bold;
+    padding:10px;
 }

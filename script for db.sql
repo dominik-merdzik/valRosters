@@ -50,6 +50,16 @@
 --  ORDER BY valRoster.adr ASC;
 
 #DROP TABLE valRoster;
-	
 
+ALTER TABLE valRoster
+ADD COLUMN userId INT;
+
+SET SQL_SAFE_UPDATES = 0;
+UPDATE valRoster
+SET userId = 3
+WHERE userId IS NULL;
+SET SQL_SAFE_UPDATES = 1;
+
+SELECT * FROM valRoster;	
+SELECT * FROM users;
     
