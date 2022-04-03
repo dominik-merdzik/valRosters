@@ -7,7 +7,7 @@
     ?>
 
 <main class="main">
-    <h1 class="heading-title">Current players</h1>
+    <h1 class="heading-title">Current players </h1>
     <div>
         <!-- creating table with heading for each row-->
         <table class="table">

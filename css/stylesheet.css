@@ -82,3 +82,22 @@ body{
     font-weight:bold;
     padding:10px;
 }
+.add-player-btn{
+    display:flex;
+    justify-content:center;
+}
+
+.my-team-buttons{
+    display:flex;
+    flex-direction: row;
+}
+.sortingForm{
+    font-size:16px;
+    font-weight:bold;
+    padding-left: 2px;
+}
+.team-buttons-player-add{
+    padding-left:10px;
+    display:flex;
+    justify-content:flex-end;
+}
