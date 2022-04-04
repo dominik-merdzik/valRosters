@@ -2,11 +2,6 @@
     $title = 'Login';
     require 'includes/header.php';
     ?>
-<body>
-<?php
-    $title = 'Login';
-    require 'includes/header.php';
-    ?>
 <main class="container">
     <h1>Login</h1>
     <?php

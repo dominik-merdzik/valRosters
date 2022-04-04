@@ -35,8 +35,18 @@
 		('Duelist');
 
 	 -- pre-adding data to be displayed (trial input) 
-	 INSERT INTO valRoster (firstName, lastName, alias, roleId, adr) 
-	 VALUES ('Tyson', 'Ngo', 'TenZ', '4', 163);      
+	 INSERT INTO valRoster (firstName, lastName, alias, roleId, adr, userId) 
+	 VALUES ('Tyson', 'Ngo', 'TenZ', '4', 163, 1),
+			('Sam', 'Oh', 'S0m', '4', 151, 1),
+            ('Matthew', 'Yu', 'WARDELL', '4', 151, 1),
+            ('Jordan', 'Montemurro', 'Zellsis', '2', 156, 1),
+            ('Aaron', 'Thao', 'b0i', '2', 119, 1),
+            ('Alexander', 'Dituri', 'Zander', '1', 143, 1),
+            ('Derrek', 'Ha', 'Derrek', '4', 163, 1),
+            ('Maxim', 'Shepelev', 'wippie', '4', 163, 1),
+			('Anthony ', 'Malaspina', 'vanity', '1', 120, 1),
+			('Erick', 'Bach', 'Xeppaa', '2', 163, 1)
+     ;      
 	
     
 	SELECT * FROM valRoster;
@@ -55,11 +65,11 @@ ALTER TABLE valRoster
 ADD COLUMN userId INT;
 
 SET SQL_SAFE_UPDATES = 0;
-UPDATE valRoster
-SET userId = 3
-WHERE userId IS NULL;
+UPDATE users
+SET userId = 1 WHERE username = "test1@test.com" ;
 SET SQL_SAFE_UPDATES = 1;
 
 SELECT * FROM valRoster;	
 SELECT * FROM users;
+    
     

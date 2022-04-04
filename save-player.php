@@ -32,7 +32,7 @@
             //connecting to database    
            require 'includes/db.php';
             
-            session_start();
+            
             $userId = $_SESSION['userId'];
             
             if (empty($playerId)) {
@@ -68,8 +68,11 @@
             $db = null;
             // once everything is ran we will give user a message using echo 
             echo 
-                '<h1>Player Is Saved <h1/>';
-            echo '<a href="list-players.php">Click here to view the list of players</a>';
+                '
+                <div class="container"> 
+                <h1>PLAYER SAVED!<h1/>
+                <a href="list-players.php">Click here to view the list of players</a>
+                </div>';
             }
         } catch (Exception $error) {
             header('location:error.php');
